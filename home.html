@@ -1,0 +1,136 @@
+  <!DOCTYPE html>
+  <html lang="ko">
+    <head>
+      <meta charset="UTF-8" />
+      <title>2022 MINI HOMEPAGE</title>
+      <link rel="stylesheet" href=".\style.css" />
+      <script src="https://kit.fontawesome.com/7d2f38d808.js" crossorigin="anonymous"></script>
+    </head>
+    <body>
+      <div class="bookcover">
+        <div class="bookdot">
+          <div class="page">
+            <div class="lc">
+              <div class="lt">Today 01.27 | Total 20135</div>
+              <div class="lb">
+                <div style = "text-align: center;">
+                  <br>
+                  <img src = ".\프로필.jpg" alt = "내 사진" width = "150" id = "pic">
+                  <p>
+                    <br>마침내 눈은 떠지고
+                    <br>사위는 고요해진다
+                    <br>거꾸로 쏟아지는 눈송이
+                    <br>빈틈을 메워넘치고
+                    <br>실 같은 울음 터지고
+                    <br>살아서 다시 꿈을 꿔본다
+                  </p>
+                  <select name = "pado" class = "pado" onchange = "window.open">
+                    <option value = "">파도타기</option>
+                    <option value = "https://www.instagram.com/_____soun_____/">인스타그램</option>
+                    <option value = "https://blog.naver.com/sounjong612">블로그</option>
+                  </select>
+                </div>
+              </div>
+            </div>
+
+            <div class="mc">
+              <div class="mt">
+                <div class="intro">____SOUN____</div>
+                <div class="url"><a href = "https://www.instagram.com/_____soun_____/" target = "_blink">Instagram</a></div>
+          </div>
+          <div class="mbox" >
+            <div class = "calendar">
+              <div class="mainday">01.27<br>THU</div>
+                <div class="subday">1 2 3 4 
+                <span class="saturday">5</span> 
+                <span class="sunday">6</span> 7 8 9 10 11 
+                <span class="saturday">12 </span>
+                <span class="sunday">13</span> 
+                14 15 16 17 18 
+                <span class="saturday">19 </span>
+                <span class="sunday">20</span> 21 22 23 24 25 
+                <span class="saturday">26 </span>
+                <span class="sunday">27</span> 28 29 30
+              </div>
+            </div>
+            <span id = "news"><strong>업데이트 소식 ♥</strong></span>
+            <br><br><div class = "mt-memo"><strong>Miniroom</strong>
+             </div>
+             <div class = "photobox">
+              <div class = "guestbookbox">
+                <div class="guestbook">
+                  <div class="guestname">첫 번째<span class = "num">카페1</span><i class = "fas fa-home"></i>(22. 01. 26)</div>
+                  <div class="guest-cont">
+                    <div class = "guestbook-image background-1"><img src = ".\KakaoTalk_20220122_212039260_01.jpg" alt = "카페" width = "90%"></div>
+                    <div class="guest-post"><p>22. 01. 16</p>행복한 하루</div>
+                  </div>
+                </div>
+
+                <div class="guestbook">
+                  <div class="guestname">두 번째<span class = "num">카페2</span><i class = "fas fa-home"></i>(22. 01. 26)</div>
+                  <div class="guest-cont">
+                    <div class = "guestbook-image backgourd-2"><img src = ".\KakaoTalk_20220122_212039260_02.jpg" alt = "카페" width = "90%"></div>
+                    <div class="guest-post"><p>22. 01. 12</p>이쁜 배경과 함께</div>
+                  </div>
+
+                  <div class="guestbook">
+                    <div class="guestname">세 번째 <span class = "num">카페3</span><i class = "fas fa-home"></i>(22. 01. 26)</div>
+                    <div class="guest-cont">
+                      <div class = "guestbook-image backgourd-3"><img src = ".\KakaoTalk_20220122_212039260.jpg" alt = "카페" width = "90%"></div>
+                      <div class="guest-post"><p>22. 01. 20</p>이쁜 사람이 있네</div>
+                    </div>
+                  </div>
+                  
+                  <div class="guestbook">
+                    <div class="guestname">네 번째 <span class = "num">카페 4</span><i class = "fas fa-home"></i>(22. 01. 26)</div>
+                    <div class="guest-cont">
+                      <div class = "guestbook-image background-4"><img src = ".\KakaoTalk_20220125_163608412.jpg" alt = "카페" width = "90%"></div>
+                      <div class="guest-post"><p>22. 01. 25</p>평생하자~</div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <button class = "secret-note" onclick="getTextfile()"><i class="fal fa-alicorn"></i>ISU의 비밀 일기장으로 가기</button>
+              <div class = "diary-name" id = "secret-box">
+                <div class="diary-new">ISU의 비밀일기</div>
+                <div class="diary-text"><p id = "secret-name"></p></div>
+              </div>
+            </div>
+           </div>
+         </div>
+        </div>
+        <div class="rbox">
+          <div class="first_menu"><a href="#">홈</a></div>
+          <div class="second_menu"><a href="#">다이어리</a></div>
+          <div class="third_menu"><a href="#">사진첩</a></div>
+          <div class="fourth_menu"><a href="#">방명록</a></div>
+        </div>
+    </div>
+    </div>
+  </div>
+    <script>
+       function getTextFile() 
+       {
+        var input = document.createElement("input");
+        input.type = "file";
+        input.accept = "text/plain";
+        input.onchange = function (event) 
+        {
+        processFile(event.target.files[0]);
+        };
+        input.click();
+       }
+
+       function processFile(file) 
+       {
+        var reader = new FileReader();
+        reader.readAsText(file, "utf-8");
+
+        reader.onload = function () 
+        {
+          document.getElementById("secret-note").innerText = reader.result;
+        };
+       }
+    </script>
+  </body>
+  </html>
